@@ -1,6 +1,7 @@
 import React from 'react';
 import { Shield, Zap, Globe, TrendingUp } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import blockchainImage from '@/assets/blockchain-visualization.jpg';
 
 const AboutSection = () => {
   const { t } = useLanguage();
@@ -53,12 +54,11 @@ const AboutSection = () => {
             {/* Left: Image/Visual */}
             <div className="relative">
               <div className="glass rounded-3xl p-8 hover-lift">
-                {/* Placeholder for Mozambique Map or Company Visual */}
-                <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center">
-                  <svg className="w-48 h-48 text-primary/40" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                  </svg>
-                </div>
+                <img 
+                  src={blockchainImage}
+                  alt="Blockchain technology visualization for cryptocurrency mining"
+                  className="w-full aspect-square object-cover rounded-2xl"
+                />
                 <div className="mt-6 text-center">
                   <h3 className="text-xl font-semibold mb-2">Mozambique Operations</h3>
                   <p className="text-muted-foreground">Strategic locations across key regions</p>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Linkedin, Twitter, Mail } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import ceoPortrait from '@/assets/ceo-portrait.jpg';
+import ctoPortrait from '@/assets/cto-portrait.jpg';
 
 const LeadershipSection = () => {
   const { t } = useLanguage();
@@ -10,7 +12,7 @@ const LeadershipSection = () => {
       name: t('leadership.ceo.name'),
       title: t('leadership.ceo.title'),
       description: t('leadership.ceo.description'),
-      image: '/api/placeholder/300/300',
+      image: ceoPortrait,
       social: {
         linkedin: '#',
         twitter: '#',
@@ -22,7 +24,7 @@ const LeadershipSection = () => {
       name: t('leadership.cto.name'),
       title: t('leadership.cto.title'),
       description: t('leadership.cto.description'),
-      image: '/api/placeholder/300/300',
+      image: ctoPortrait,
       social: {
         linkedin: '#',
         twitter: '#',
@@ -60,11 +62,11 @@ const LeadershipSection = () => {
                   {/* Leader Avatar */}
                   <div className="relative mx-auto mb-6">
                     <div className={`w-32 h-32 rounded-full bg-gradient-to-br ${leader.gradient} p-1`}>
-                      <div className="w-full h-full rounded-full bg-muted flex items-center justify-center">
-                        <div className="text-4xl font-bold text-muted-foreground">
-                          {leader.name.charAt(0)}
-                        </div>
-                      </div>
+                      <img 
+                        src={leader.image}
+                        alt={`${leader.name} - ${leader.title}`}
+                        className="w-full h-full rounded-full object-cover"
+                      />
                     </div>
                     <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center">
                       <div className="w-3 h-3 bg-white rounded-full"></div>

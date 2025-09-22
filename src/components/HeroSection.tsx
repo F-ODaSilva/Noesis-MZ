@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import heroImage from '@/assets/hero-image.jpg';
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -15,6 +16,16 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src={heroImage} 
+          alt="Modern cryptocurrency mining facility in Mozambique"
+          className="w-full h-full object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/90 to-background/70"></div>
+      </div>
+      
       {/* Decorative Bubbles */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="bubble bubble-animate w-64 h-64 top-20 left-10 opacity-5"></div>

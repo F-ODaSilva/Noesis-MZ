@@ -1,6 +1,7 @@
 import React from 'react';
 import { Cpu, Users, Server, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import renewableEnergyImage from '@/assets/renewable-energy.jpg';
 
 const ServicesSection = () => {
   const { t } = useLanguage();
@@ -91,7 +92,7 @@ const ServicesSection = () => {
           </div>
 
           {/* Additional Service Info */}
-          <div className="mt-16 grid md:grid-cols-2 gap-8">
+          <div className="mt-16 grid md:grid-cols-3 gap-8">
             <div className="glass rounded-2xl p-8">
               <div className="flex items-center mb-4">
                 <div className="w-3 h-3 bg-accent rounded-full mr-3"></div>
@@ -109,6 +110,21 @@ const ServicesSection = () => {
               </div>
               <p className="text-muted-foreground">
                 Strategic partnerships with local and international organizations to accelerate blockchain adoption in Mozambique.
+              </p>
+            </div>
+
+            <div className="glass rounded-2xl p-8">
+              <img 
+                src={renewableEnergyImage}
+                alt="Renewable energy infrastructure supporting sustainable crypto mining in Mozambique"
+                className="w-full h-32 object-cover rounded-xl mb-4"
+              />
+              <div className="flex items-center mb-2">
+                <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                <h4 className="text-lg font-semibold">Green Energy</h4>
+              </div>
+              <p className="text-muted-foreground">
+                100% renewable energy commitment for sustainable crypto mining operations.
               </p>
             </div>
           </div>
