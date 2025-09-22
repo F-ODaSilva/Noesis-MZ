@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
-import heroImage from '@/assets/hero-image.jpg';
+import heroImage from '@/assets/coins-layed.jpg';
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -21,16 +21,16 @@ const HeroSection = () => {
         <img 
           src={heroImage} 
           alt="Modern cryptocurrency mining facility in Mozambique"
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover opacity-8"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-background/90 to-background/70"></div>
       </div>
       
       {/* Decorative Bubbles */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="bubble bubble-animate w-64 h-64 top-20 left-10 opacity-5"></div>
-        <div className="bubble bubble-animate w-96 h-96 top-40 right-20 opacity-3" style={{ animationDelay: '-5s' }}></div>
-        <div className="bubble bubble-animate w-32 h-32 bottom-32 left-1/4 opacity-8" style={{ animationDelay: '-10s' }}></div>
+        <div className="bubble bubble-animate w-64 h-64 top-20 left-10 opacity-20"></div>
+        <div className="bubble bubble-animate w-96 h-96 top-40 right-20 opacity-20" style={{ animationDelay: '-5s' }}></div>
+        <div className="bubble bubble-animate w-32 h-32 bottom-32 left-1/4 opacity-20" style={{ animationDelay: '-10s' }}></div>
       </div>
       
       <div className="container mx-auto px-6 py-32 relative z-10">
