@@ -1,14 +1,10 @@
 import React from 'react';
 import { Cpu, Users, Server, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useScrollAnimation, useStaggeredAnimation } from '@/hooks/useScrollAnimation';
 import renewableEnergyImage from '@/assets/renewable-energy.jpg';
 
 const ServicesSection = () => {
   const { t } = useLanguage();
-  const titleRef = useScrollAnimation<HTMLDivElement>('reveal');
-  const servicesRef = useStaggeredAnimation<HTMLDivElement>(3);
-  const additionalRef = useScrollAnimation<HTMLDivElement>('reveal-scale');
 
   const services = [
     {
@@ -35,21 +31,17 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-24 relative overflow-hidden bg-animated">
-      {/* Enhanced Background Elements */}
+    <section id="services" className="py-24 relative overflow-hidden">
+      {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="bubble bubble-animate parallax-slow w-72 h-72 top-20 -left-16 opacity-3" style={{ animationDelay: '-12s' }}></div>
-        <div className="bubble bubble-pulse parallax-medium w-48 h-48 bottom-16 right-8 opacity-4" style={{ animationDelay: '-6s' }}></div>
-        <div className="floating-orb w-80 h-80 top-1/3 right-3/4 opacity-15" style={{ animationDelay: '-18s' }}></div>
-        <div className="mesh-gradient w-96 h-96 top-16 right-16 opacity-20" style={{ animationDelay: '-30s' }}></div>
-        <div className="geometric-shape top-24 left-1/3 w-5 h-5 bg-primary/10 rotate-12 parallax-fast" style={{ animationDelay: '-4s' }}></div>
-        <div className="geometric-shape bottom-24 right-1/4 w-2 h-6 bg-accent/20 parallax-medium" style={{ animationDelay: '-14s' }}></div>
+        <div className="bubble w-56 h-56 top-32 left-8 opacity-3" style={{ animationDelay: '-12s' }}></div>
+        <div className="bubble w-32 h-32 bottom-20 right-12 opacity-5" style={{ animationDelay: '-6s' }}></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div ref={titleRef} className="text-center mb-16">
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               {t('services.title')}
             </h2>
@@ -59,11 +51,11 @@ const ServicesSection = () => {
           </div>
 
           {/* Bento Grid Services */}
-          <div ref={servicesRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`reveal-stagger bento-card group cursor-pointer ${
+                className={`bento-card group cursor-pointer ${
                   index === 0 ? 'md:col-span-2 lg:col-span-1' : ''
                 } ${index === 1 ? 'lg:row-span-1' : ''}`}
               >
@@ -100,7 +92,7 @@ const ServicesSection = () => {
           </div>
 
           {/* Additional Service Info */}
-          <div ref={additionalRef} className="mt-16 grid md:grid-cols-3 gap-8">
+          <div className="mt-16 grid md:grid-cols-3 gap-8">
             <div className="glass rounded-2xl p-8">
               <div className="flex items-center mb-4">
                 <div className="w-3 h-3 bg-accent rounded-full mr-3"></div>

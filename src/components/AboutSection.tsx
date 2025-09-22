@@ -1,15 +1,10 @@
 import React from 'react';
 import { Shield, Zap, Globe, TrendingUp } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useScrollAnimation, useStaggeredAnimation } from '@/hooks/useScrollAnimation';
 import blockchainImage from '@/assets/blockchain-visualization.jpg';
 
 const AboutSection = () => {
   const { t } = useLanguage();
-  const titleRef = useScrollAnimation<HTMLDivElement>('reveal');
-  const imageRef = useScrollAnimation<HTMLDivElement>('reveal-left');
-  const featuresRef = useStaggeredAnimation<HTMLDivElement>(4);
-  const statsRef = useScrollAnimation<HTMLDivElement>('reveal-scale');
 
   const features = [
     {
@@ -35,20 +30,17 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-animated">
-      {/* Enhanced Background Elements */}
+    <section id="about" className="py-24 relative overflow-hidden">
+      {/* Background Bubbles */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="bubble bubble-animate parallax-slow w-56 h-56 top-16 -right-10 opacity-3" style={{ animationDelay: '-15s' }}></div>
-        <div className="bubble bubble-pulse parallax-medium w-40 h-40 bottom-32 left-10 opacity-5" style={{ animationDelay: '-8s' }}></div>
-        <div className="floating-orb w-64 h-64 top-1/4 left-3/4 opacity-20" style={{ animationDelay: '-25s' }}></div>
-        <div className="geometric-shape top-16 left-1/4 w-8 h-2 bg-primary/10 parallax-fast" style={{ animationDelay: '-5s' }}></div>
-        <div className="geometric-shape bottom-20 right-1/3 w-3 h-3 bg-accent/15 rounded-full parallax-medium" style={{ animationDelay: '-18s' }}></div>
+        <div className="bubble w-40 h-40 top-20 right-10 opacity-4" style={{ animationDelay: '-15s' }}></div>
+        <div className="bubble w-28 h-28 bottom-40 left-16 opacity-6" style={{ animationDelay: '-8s' }}></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div ref={titleRef} className="text-center mb-16">
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               {t('about.title')}
             </h2>
@@ -60,7 +52,7 @@ const AboutSection = () => {
           {/* Main Content Grid */}
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             {/* Left: Image/Visual */}
-            <div ref={imageRef} className="relative">
+            <div className="relative">
               <div className="glass rounded-3xl p-8 hover-lift">
                 <img 
                   src={blockchainImage}
@@ -75,9 +67,9 @@ const AboutSection = () => {
             </div>
 
             {/* Right: Features */}
-            <div ref={featuresRef} className="space-y-6">
+            <div className="space-y-6">
               {features.map((feature, index) => (
-                <div key={index} className="reveal-stagger flex items-start space-x-4 hover-lift p-4 rounded-xl transition-all duration-300">
+                <div key={index} className="flex items-start space-x-4 hover-lift p-4 rounded-xl transition-all duration-300">
                   <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center">
                     <feature.icon className="w-6 h-6 text-white" />
                   </div>
@@ -91,7 +83,7 @@ const AboutSection = () => {
           </div>
 
           {/* Company Stats */}
-          <div ref={statsRef} className="glass rounded-3xl p-8">
+          <div className="glass rounded-3xl p-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
                 <div className="text-2xl md:text-3xl font-bold text-accent mb-2">15+</div>

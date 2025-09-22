@@ -1,13 +1,9 @@
 import React from 'react';
 import { Calendar, MapPin, Zap, Target } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useScrollAnimation, useStaggeredAnimation } from '@/hooks/useScrollAnimation';
 
 const ProjectsSection = () => {
   const { t } = useLanguage();
-  const titleRef = useScrollAnimation<HTMLDivElement>('reveal');
-  const pioneerRef = useScrollAnimation<HTMLDivElement>('reveal-left');
-  const timelineRef = useStaggeredAnimation<HTMLDivElement>(5);
 
   const timelinePhases = [
     {
@@ -34,15 +30,11 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden bg-animated">
-      {/* Enhanced Background Elements */}
+    <section id="projects" className="py-24 relative overflow-hidden">
+      {/* Background Bubbles */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="bubble bubble-animate parallax-slow w-88 h-88 top-8 -right-12 opacity-3" style={{ animationDelay: '-20s' }}></div>
-        <div className="bubble bubble-pulse parallax-medium w-56 h-56 bottom-20 left-12 opacity-4" style={{ animationDelay: '-3s' }}></div>
-        <div className="floating-orb w-72 h-72 top-1/2 left-4/5 opacity-12" style={{ animationDelay: '-26s' }}></div>
-        <div className="mesh-gradient w-80 h-80 bottom-16 right-20 opacity-25" style={{ animationDelay: '-35s' }}></div>
-        <div className="geometric-shape top-32 left-1/4 w-6 h-6 bg-accent/15 rotate-12 parallax-fast" style={{ animationDelay: '-8s' }}></div>
-        <div className="geometric-shape bottom-40 right-1/3 w-3 h-8 bg-primary/20 parallax-medium" style={{ animationDelay: '-19s' }}></div>
+        <div className="bubble w-72 h-72 top-16 right-4 opacity-2" style={{ animationDelay: '-20s' }}></div>
+        <div className="bubble w-44 h-44 bottom-32 left-20 opacity-4" style={{ animationDelay: '-3s' }}></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">

@@ -1,15 +1,11 @@
 import React from 'react';
 import { Linkedin, Twitter, Mail } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useScrollAnimation, useStaggeredAnimation } from '@/hooks/useScrollAnimation';
 import ceoPortrait from '@/assets/ceo-portrait.jpg';
 import ctoPortrait from '@/assets/cto-portrait.jpg';
 
 const LeadershipSection = () => {
   const { t } = useLanguage();
-  const titleRef = useScrollAnimation<HTMLDivElement>('reveal');
-  const leadersRef = useStaggeredAnimation<HTMLDivElement>(2);
-  const boardRef = useScrollAnimation<HTMLDivElement>('reveal-scale');
 
   const leaders = [
     {
@@ -39,20 +35,17 @@ const LeadershipSection = () => {
   ];
 
   return (
-    <section id="leadership" className="py-24 relative overflow-hidden bg-animated">
-      {/* Enhanced Background Elements */}
+    <section id="leadership" className="py-24 relative overflow-hidden">
+      {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="bubble bubble-animate parallax-slow w-60 h-60 top-16 left-8 opacity-3" style={{ animationDelay: '-18s' }}></div>
-        <div className="bubble bubble-pulse parallax-medium w-44 h-44 bottom-12 right-12 opacity-4" style={{ animationDelay: '-9s' }}></div>
-        <div className="floating-orb w-88 h-88 top-2/3 left-4/5 opacity-18" style={{ animationDelay: '-22s' }}></div>
-        <div className="geometric-shape top-20 right-1/4 w-4 h-4 bg-accent/15 rotate-45 parallax-fast" style={{ animationDelay: '-11s' }}></div>
-        <div className="geometric-shape bottom-16 left-1/3 w-6 h-1 bg-primary/20 parallax-medium" style={{ animationDelay: '-16s' }}></div>
+        <div className="bubble w-48 h-48 top-24 left-12 opacity-3" style={{ animationDelay: '-18s' }}></div>
+        <div className="bubble w-36 h-36 bottom-16 right-16 opacity-5" style={{ animationDelay: '-9s' }}></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div ref={titleRef} className="text-center mb-16">
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               {t('leadership.title')}
             </h2>
@@ -62,9 +55,9 @@ const LeadershipSection = () => {
           </div>
 
           {/* Leadership Cards */}
-          <div ref={leadersRef} className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
             {leaders.map((leader, index) => (
-              <div key={index} className="reveal-stagger bento-card group">
+              <div key={index} className="bento-card group">
                 <div className="text-center">
                   {/* Leader Avatar */}
                   <div className="relative mx-auto mb-6">
@@ -117,7 +110,7 @@ const LeadershipSection = () => {
           </div>
 
           {/* Advisory Board */}
-          <div ref={boardRef} className="glass-strong rounded-3xl p-8">
+          <div className="glass rounded-3xl p-8">
             <h3 className="text-xl font-bold text-center mb-8">Advisory Board</h3>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
