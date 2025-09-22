@@ -2,41 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* NOESIS Design System - Crypto Mining Startup */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    /* NOESIS Brand Colors */
+    --color-primary: 214 100% 27%;        /* #1E3A8A - Corporate Blue */
+    --color-on-primary: 0 0% 100%;        /* #FFFFFF - White on primary */
+    --color-accent: 35 91% 51%;           /* #F59E0B - Gold accent */
+    --color-on-accent: 0 0% 0%;           /* #000000 - Black on accent */
+    --color-muted: 218 11% 23%;           /* #374151 - Muted text */
+    --color-bg: 218 11% 95%;              /* #F3F4F6 - Light background */
+    --color-surface: 0 0% 100%;           /* #FFFFFF - Surface white */
+    --color-surface-glass: 0 0% 100% / 0.1; /* Glass panels */
+    --color-border: 220 13% 91%;          /* #E5E7EB - Borders */
+    
+    /* Semantic tokens for shadcn compatibility */
+    --background: 218 11% 95%;            /* Light gray background */
+    --foreground: 218 11% 12%;            /* Dark text */
+    --card: 0 0% 100%;                    /* White cards */
+    --card-foreground: 218 11% 12%;       /* Dark text on cards */
+    --primary: 214 100% 27%;              /* Corporate blue */
+    --primary-foreground: 0 0% 100%;      /* White on primary */
+    --secondary: 220 13% 95%;             /* Light gray secondary */
+    --secondary-foreground: 218 11% 12%;  /* Dark on secondary */
+    --muted: 220 13% 95%;                 /* Muted background */
+    --muted-foreground: 218 11% 35%;      /* Muted text */
+    --accent: 35 91% 51%;                 /* Gold accent */
+    --accent-foreground: 0 0% 0%;         /* Black on accent */
+    --border: 220 13% 91%;                /* Border color */
+    --input: 220 13% 91%;                 /* Input borders */
+    --ring: 214 100% 27%;                 /* Focus rings */
+    
+    /* Glass morphism variables */
+    --glass-bg: 255 255 255 / 0.1;
+    --glass-border: 255 255 255 / 0.2;
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(214 100% 35%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(35 91% 60%));
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +70,43 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* NOESIS Dark Mode Colors */
+    --color-primary: 214 100% 35%;        /* Lighter blue for dark mode */
+    --color-on-primary: 0 0% 100%;        /* White on primary */
+    --color-accent: 35 91% 60%;           /* Lighter gold for dark mode */
+    --color-on-accent: 0 0% 0%;           /* Black on accent */
+    --color-muted: 218 11% 65%;           /* Lighter muted for readability */
+    --color-bg: 218 20% 8%;               /* Dark background */
+    --color-surface: 218 20% 12%;         /* Dark surface */
+    --color-surface-glass: 0 0% 0% / 0.2; /* Dark glass panels */
+    --color-border: 218 20% 20%;          /* Dark borders */
+    
+    /* Semantic tokens for dark mode */
+    --background: 218 20% 8%;             /* Dark background */
+    --foreground: 220 13% 95%;            /* Light text */
+    --card: 218 20% 12%;                  /* Dark cards */
+    --card-foreground: 220 13% 95%;       /* Light text on cards */
+    --primary: 214 100% 35%;              /* Lighter corporate blue */
+    --primary-foreground: 0 0% 100%;      /* White on primary */
+    --secondary: 218 20% 15%;             /* Dark secondary */
+    --secondary-foreground: 220 13% 95%;  /* Light on secondary */
+    --muted: 218 20% 15%;                 /* Dark muted */
+    --muted-foreground: 218 11% 65%;      /* Light muted text */
+    --accent: 35 91% 60%;                 /* Lighter gold */
+    --accent-foreground: 0 0% 0%;         /* Black on accent */
+    --border: 218 20% 20%;                /* Dark borders */
+    --input: 218 20% 20%;                 /* Dark input borders */
+    --ring: 214 100% 35%;                 /* Focus rings */
+    
+    /* Dark glass morphism */
+    --glass-bg: 0 0 0 / 0.2;
+    --glass-border: 255 255 255 / 0.1;
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(214 100% 45%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(35 91% 70%));
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
   }
 }
 
@@ -101,5 +117,117 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* NOESIS Custom Components */
+@layer components {
+  /* Glassmorphism Effects */
+  .glass {
+    background: rgba(var(--glass-bg));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(var(--glass-border));
+    box-shadow: var(--glass-shadow);
+  }
+  
+  .glass-fallback {
+    background: hsl(var(--card) / 0.95);
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 10px 25px -5px hsl(var(--foreground) / 0.1);
+  }
+  
+  /* Bento Card System */
+  .bento-card {
+    @apply glass rounded-2xl p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl;
+    background: var(--gradient-glass);
+  }
+  
+  .bento-card-lg {
+    @apply bento-card col-span-2;
+  }
+  
+  .bento-card-tall {
+    @apply bento-card row-span-2;
+  }
+  
+  /* Hero CTA Styles */
+  .hero-cta {
+    @apply glass px-8 py-4 rounded-full font-semibold transition-all duration-300;
+    background: var(--gradient-accent);
+    color: hsl(var(--accent-foreground));
+    box-shadow: 0 8px 25px -8px hsl(var(--accent) / 0.5);
+  }
+  
+  .hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px -8px hsl(var(--accent) / 0.6);
+  }
+  
+  /* Decorative Bubbles */
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+    background: var(--gradient-primary);
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  .bubble-animate {
+    animation: bubble-float 20s infinite linear;
+  }
+  
+  @keyframes bubble-float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-20px) rotate(90deg); }
+    50% { transform: translateY(-10px) rotate(180deg); }
+    75% { transform: translateY(-30px) rotate(270deg); }
+  }
+  
+  /* Interactive Elements */
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -10px hsl(var(--foreground) / 0.15);
+  }
+  
+  /* Focus Styles */
+  .focus-ring:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+  
+  /* Reveal Animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
