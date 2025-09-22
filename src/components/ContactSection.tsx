@@ -5,10 +5,14 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const ContactSection = () => {
   const { t } = useLanguage();
   const { toast } = useToast();
+  const titleRef = useScrollAnimation<HTMLDivElement>('reveal');
+  const formRef = useScrollAnimation<HTMLDivElement>('reveal-left');
+  const infoRef = useScrollAnimation<HTMLDivElement>('reveal-right');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -66,17 +70,20 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
-      {/* Background Bubbles */}
+    <section id="contact" className="py-24 relative overflow-hidden bg-animated">
+      {/* Enhanced Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="bubble w-64 h-64 top-20 left-8 opacity-2" style={{ animationDelay: '-25s' }}></div>
-        <div className="bubble w-40 h-40 bottom-24 right-20 opacity-4" style={{ animationDelay: '-7s' }}></div>
+        <div className="bubble bubble-animate parallax-slow w-76 h-76 top-12 left-4 opacity-3" style={{ animationDelay: '-25s' }}></div>
+        <div className="bubble bubble-pulse parallax-medium w-52 h-52 bottom-16 right-12 opacity-4" style={{ animationDelay: '-7s' }}></div>
+        <div className="floating-orb w-68 h-68 top-2/3 right-4/5 opacity-16" style={{ animationDelay: '-32s' }}></div>
+        <div className="geometric-shape top-24 right-1/4 w-5 h-5 bg-primary/15 rotate-45 parallax-fast" style={{ animationDelay: '-13s' }}></div>
+        <div className="geometric-shape bottom-32 left-1/3 w-2 h-6 bg-accent/20 parallax-medium" style={{ animationDelay: '-21s' }}></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <div ref={titleRef} className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               {t('contact.title')}
             </h2>
@@ -87,7 +94,7 @@ const ContactSection = () => {
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bento-card">
+            <div ref={formRef} className="bento-card glass-strong">
               <h3 className="text-2xl font-bold mb-6">Send us a message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -160,7 +167,7 @@ const ContactSection = () => {
             </div>
 
             {/* Contact Information */}
-            <div className="space-y-6">
+            <div ref={infoRef} className="space-y-6">
               {contactInfo.map((item, index) => (
                 <div key={index} className="bento-card group hover-lift">
                   <div className="flex items-start space-x-4">
