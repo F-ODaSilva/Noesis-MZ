@@ -2,10 +2,18 @@ import React from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+<<<<<<< HEAD
 import heroImage from '@/assets/coins-layed.jpg';
+=======
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import heroImage from '@/assets/hero-image.jpg';
+>>>>>>> e992275bd58edfa8db9de95eae7b9711e5a095aa
 
 const HeroSection = () => {
   const { t } = useLanguage();
+  const titleRef = useScrollAnimation<HTMLHeadingElement>('reveal-scale');
+  const subtitleRef = useScrollAnimation<HTMLParagraphElement>('reveal');
+  const ctaRef = useScrollAnimation<HTMLDivElement>('reveal');
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -26,11 +34,33 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-background/90 to-background/70"></div>
       </div>
       
+<<<<<<< HEAD
       {/* Decorative Bubbles */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="bubble bubble-animate w-64 h-64 top-20 left-10 opacity-20"></div>
         <div className="bubble bubble-animate w-96 h-96 top-40 right-20 opacity-20" style={{ animationDelay: '-5s' }}></div>
         <div className="bubble bubble-animate w-32 h-32 bottom-32 left-1/4 opacity-20" style={{ animationDelay: '-10s' }}></div>
+=======
+      {/* Enhanced Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Animated Bubbles */}
+        <div className="bubble bubble-animate parallax-slow w-80 h-80 -top-10 -left-20 opacity-3"></div>
+        <div className="bubble bubble-animate bubble-pulse parallax-medium w-64 h-64 top-20 right-10 opacity-4" style={{ animationDelay: '-5s' }}></div>
+        <div className="bubble bubble-animate parallax-fast w-40 h-40 bottom-40 left-1/4 opacity-6" style={{ animationDelay: '-10s' }}></div>
+        <div className="bubble bubble-animate w-32 h-32 top-1/3 left-1/3 opacity-5" style={{ animationDelay: '-15s' }}></div>
+        
+        {/* Floating Orbs */}
+        <div className="floating-orb w-96 h-96 -top-32 -right-32" style={{ animationDelay: '-8s' }}></div>
+        <div className="floating-orb w-72 h-72 bottom-0 -left-24" style={{ animationDelay: '-20s' }}></div>
+        
+        {/* Mesh Gradient Background */}
+        <div className="mesh-gradient w-full h-full opacity-30"></div>
+        
+        {/* Geometric Shapes */}
+        <div className="geometric-shape top-1/4 right-1/4 w-6 h-6 bg-accent/20 rotate-45 parallax-medium" style={{ animationDelay: '-3s' }}></div>
+        <div className="geometric-shape bottom-1/3 left-1/5 w-4 h-4 bg-primary/20 rounded-full parallax-fast" style={{ animationDelay: '-12s' }}></div>
+        <div className="geometric-shape top-3/4 right-1/3 w-3 h-8 bg-accent/15 parallax-slow" style={{ animationDelay: '-7s' }}></div>
+>>>>>>> e992275bd58edfa8db9de95eae7b9711e5a095aa
       </div>
       
       <div className="container mx-auto px-6 py-32 relative z-10">
@@ -42,19 +72,19 @@ const HeroSection = () => {
           </div>
 
           {/* Hero Title */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h1 ref={titleRef} className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
               {t('hero.title')}
             </span>
           </h1>
 
           {/* Hero Subtitle */}
-          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p ref={subtitleRef} className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
             {t('hero.subtitle')}
           </p>
 
           {/* Hero CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+          <div ref={ctaRef} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <Button 
               className="hero-cta group"
               onClick={() => scrollToSection('contact')}
