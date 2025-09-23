@@ -21,11 +21,11 @@ const translations = {
   
   // Hero Section
   'hero.title': { 
-    pt: 'Transformando Energia Em Valor Digital', 
-    en: 'Transforming Energy Into Digital Value' 
+    pt: 'Transformando Moçambique através da Mineração Cripto', 
+    en: 'Transforming Mozambique through Crypto Mining' 
   },
   'hero.subtitle': { 
-    pt: 'Soluções inteligentes para centros de dados e ativos digitais em Moçambique',
+    pt: 'NOESIS está na vanguarda da revolução blockchain em Moçambique, construindo infraestrutura sustentável de mineração de criptomoedas com tecnologia de ponta.',
     en: 'NOESIS is at the forefront of blockchain revolution in Mozambique, building sustainable crypto mining infrastructure with cutting-edge technology.'
   },
   'hero.cta.primary': { pt: 'Começar Agora', en: 'Get Started' },
