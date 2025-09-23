@@ -1,10 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* NOESIS Design System - Crypto Mining Startup */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
@@ -175,9 +174,13 @@
     background: var(--gradient-accent);
     color: hsl(var(--accent-foreground));
     box-shadow: 0 8px 25px -8px hsl(var(--accent) / 0.5);
+    z-index: 30;
+    position: relative;
+    cursor: pointer;
   }
   
   .hero-cta:hover {
+    cursor: pointer;
     transform: translateY(-2px);
     box-shadow: 0 12px 30px -8px hsl(var(--accent) / 0.6);
   }

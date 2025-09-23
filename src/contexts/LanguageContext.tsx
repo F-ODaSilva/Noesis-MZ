@@ -21,21 +21,26 @@ const translations = {
   
   // Hero Section
   'hero.title': { 
-    pt: 'Transformando Moçambique através da Mineração Cripto', 
-    en: 'Transforming Mozambique through Crypto Mining' 
+    pt: 'Transformando Energia Em Valor Digital', 
+    en: 'Transforming Energy Into Digital Value' 
   },
   'hero.subtitle': { 
-    pt: 'NOESIS está na vanguarda da revolução blockchain em Moçambique, construindo infraestrutura sustentável de mineração de criptomoedas com tecnologia de ponta.',
-    en: 'NOESIS is at the forefront of blockchain revolution in Mozambique, building sustainable crypto mining infrastructure with cutting-edge technology.'
+    pt: 'Soluções inteligentes para centros de dados e ativos digitais',
+    en: 'Smart solutions for data centers and digital assets'
   },
   'hero.cta.primary': { pt: 'Começar Agora', en: 'Get Started' },
   'hero.cta.secondary': { pt: 'Saber Mais', en: 'Learn More' },
+
+  // Stats Section
+  'hero.stats.capacity': { pt: 'Capacidade de Mineração', en: 'Target Capacity' },
+  'hero.stats.year': { pt: 'Ano de Lançamento', en: 'Launch Year' },
+  'hero.stats.sustainability': { pt: 'Energia Sustentável', en: 'Green Energy' },
   
   // About Section
   'about.title': { pt: 'Sobre a NOESIS', en: 'About NOESIS' },
   'about.description': { 
-    pt: 'Somos pioneiros em tecnologia blockchain em Moçambique, comprometidos em desenvolver soluções inovadoras de mineração de criptomoedas que impulsionam o crescimento económico sustentável.',
-    en: 'We are blockchain technology pioneers in Mozambique, committed to developing innovative crypto mining solutions that drive sustainable economic growth.'
+    pt: 'A Noesis tem como missão transformar o potencial energético de Moçambique em valor digital promovendo inovação tecnológica, eficiência energeticamente otimizada e sustentabilidade. Nossa visão é liderar o desenvolvimento de centros de dados e soluções de mineração de criptomoedas que impulsionem o crescimento econômico sustentável e posicionem Moçambique como um hub digital na África, conectando parceiros estratégicos e impulsionando o crescimento tecnológico do país.',
+    en: 'Noesis\'s mission is to transform Mozambique\'s energy potential into digital value by promoting technological innovation, energy-efficient optimization, and sustainability. Our vision is to lead the development of data centers and crypto mining solutions that drive sustainable economic growth and position Mozambique as a digital hub in Africa, connecting strategic partners and driving the country\'s technological growth.'
   },
   
   // Services Section
