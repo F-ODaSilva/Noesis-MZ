@@ -7,43 +7,46 @@
 
 @layer base {
   :root {
-    /* NOESIS Brand Colors */
-    --color-primary: 214 100% 27%;        /* #1E3A8A - Corporate Blue */
+    /* Modern Crypto/Business Brand Colors - Inspired by templates */
+    --color-primary: 220 26% 14%;         /* #1A202C - Deep Navy */
     --color-on-primary: 0 0% 100%;        /* #FFFFFF - White on primary */
-    --color-accent: 35 91% 51%;           /* #F59E0B - Gold accent */
-    --color-on-accent: 0 0% 0%;           /* #000000 - Black on accent */
-    --color-muted: 218 11% 23%;           /* #374151 - Muted text */
-    --color-bg: 218 11% 95%;              /* #F3F4F6 - Light background */
-    --color-surface: 0 0% 100%;           /* #FFFFFF - Surface white */
-    --color-surface-glass: 0 0% 100% / 0.1; /* Glass panels */
-    --color-border: 220 13% 91%;          /* #E5E7EB - Borders */
+    --color-accent: 45 93% 47%;           /* #F6AD14 - Bitcoin Gold */
+    --color-accent-light: 45 93% 58%;     /* Lighter gold variant */
+    --color-on-accent: 220 26% 14%;       /* Dark on accent */
+    --color-muted: 215 25% 27%;           /* #364152 - Muted text */
+    --color-bg: 0 0% 98%;                 /* #FAFAFA - Clean white background */
+    --color-surface: 0 0% 100%;           /* #FFFFFF - Pure white */
+    --color-surface-dark: 220 26% 14%;    /* Dark surface */
+    --color-border: 210 20% 90%;          /* #E2E8F0 - Light borders */
     
     /* Semantic tokens for shadcn compatibility */
-    --background: 218 11% 95%;            /* Light gray background */
-    --foreground: 218 11% 12%;            /* Dark text */
-    --card: 0 0% 100%;                    /* White cards */
-    --card-foreground: 218 11% 12%;       /* Dark text on cards */
-    --primary: 214 100% 27%;              /* Corporate blue */
-    --primary-foreground: 0 0% 100%;      /* White on primary */
-    --secondary: 220 13% 95%;             /* Light gray secondary */
-    --secondary-foreground: 218 11% 12%;  /* Dark on secondary */
-    --muted: 220 13% 95%;                 /* Muted background */
-    --muted-foreground: 218 11% 35%;      /* Muted text */
-    --accent: 35 91% 51%;                 /* Gold accent */
-    --accent-foreground: 0 0% 0%;         /* Black on accent */
-    --border: 220 13% 91%;                /* Border color */
-    --input: 220 13% 91%;                 /* Input borders */
-    --ring: 214 100% 27%;                 /* Focus rings */
+    --background: 0 0% 98%;               /* Clean light background */
+    --foreground: 220 26% 14%;            /* Deep navy text */
+    --card: 0 0% 100%;                    /* Pure white cards */
+    --card-foreground: 220 26% 14%;       /* Dark text on cards */
+    --primary: 45 93% 47%;                /* Bitcoin Gold primary */
+    --primary-foreground: 220 26% 14%;    /* Dark on primary */
+    --secondary: 210 20% 95%;             /* Light gray secondary */
+    --secondary-foreground: 220 26% 14%;  /* Dark on secondary */
+    --muted: 210 20% 95%;                 /* Light muted background */
+    --muted-foreground: 215 25% 27%;      /* Muted text */
+    --accent: 45 93% 47%;                 /* Bitcoin Gold accent */
+    --accent-foreground: 220 26% 14%;     /* Dark on accent */
+    --border: 210 20% 90%;                /* Light border */
+    --input: 210 20% 90%;                 /* Input borders */
+    --ring: 45 93% 47%;                   /* Gold focus rings */
     
     /* Glass morphism variables */
     --glass-bg: 255 255 255 / 0.1;
     --glass-border: 255 255 255 / 0.2;
     --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(214 100% 35%));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(35 91% 60%));
+    /* Modern Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220 26% 14%), hsl(220 26% 18%));
+    --gradient-accent: linear-gradient(135deg, hsl(45 93% 47%), hsl(45 93% 58%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 26% 14% / 0.95), hsl(220 26% 14% / 0.8));
     --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 20% 98%));
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -69,33 +72,33 @@
   }
 
   .dark {
-    /* NOESIS Dark Mode Colors */
-    --color-primary: 214 100% 35%;        /* Lighter blue for dark mode */
-    --color-on-primary: 0 0% 100%;        /* White on primary */
-    --color-accent: 35 91% 60%;           /* Lighter gold for dark mode */
-    --color-on-accent: 0 0% 0%;           /* Black on accent */
-    --color-muted: 218 11% 65%;           /* Lighter muted for readability */
-    --color-bg: 218 20% 8%;               /* Dark background */
-    --color-surface: 218 20% 12%;         /* Dark surface */
-    --color-surface-glass: 0 0% 0% / 0.2; /* Dark glass panels */
-    --color-border: 218 20% 20%;          /* Dark borders */
+    /* Modern Dark Mode - Crypto/Business Theme */
+    --color-primary: 45 93% 47%;          /* Bitcoin Gold in dark mode */
+    --color-on-primary: 220 26% 14%;      /* Dark on primary */
+    --color-accent: 45 93% 58%;           /* Lighter gold for dark mode */
+    --color-on-accent: 220 26% 14%;       /* Dark on accent */
+    --color-muted: 220 15% 65%;           /* Light muted for readability */
+    --color-bg: 220 26% 8%;               /* Deep dark background */
+    --color-surface: 220 26% 12%;         /* Dark surface */
+    --color-surface-glass: 0 0% 0% / 0.3; /* Dark glass panels */
+    --color-border: 220 20% 20%;          /* Dark borders */
     
     /* Semantic tokens for dark mode */
-    --background: 218 20% 8%;             /* Dark background */
-    --foreground: 220 13% 95%;            /* Light text */
-    --card: 218 20% 12%;                  /* Dark cards */
-    --card-foreground: 220 13% 95%;       /* Light text on cards */
-    --primary: 214 100% 35%;              /* Lighter corporate blue */
-    --primary-foreground: 0 0% 100%;      /* White on primary */
-    --secondary: 218 20% 15%;             /* Dark secondary */
-    --secondary-foreground: 220 13% 95%;  /* Light on secondary */
-    --muted: 218 20% 15%;                 /* Dark muted */
-    --muted-foreground: 218 11% 65%;      /* Light muted text */
-    --accent: 35 91% 60%;                 /* Lighter gold */
-    --accent-foreground: 0 0% 0%;         /* Black on accent */
-    --border: 218 20% 20%;                /* Dark borders */
-    --input: 218 20% 20%;                 /* Dark input borders */
-    --ring: 214 100% 35%;                 /* Focus rings */
+    --background: 220 26% 8%;             /* Deep dark background */
+    --foreground: 210 20% 95%;            /* Light text */
+    --card: 220 26% 12%;                  /* Dark cards */
+    --card-foreground: 210 20% 95%;       /* Light text on cards */
+    --primary: 45 93% 47%;                /* Bitcoin Gold primary */
+    --primary-foreground: 220 26% 14%;    /* Dark on primary */
+    --secondary: 220 26% 15%;             /* Dark secondary */
+    --secondary-foreground: 210 20% 95%;  /* Light on secondary */
+    --muted: 220 26% 15%;                 /* Dark muted */
+    --muted-foreground: 220 15% 65%;      /* Light muted text */
+    --accent: 45 93% 58%;                 /* Lighter gold accent */
+    --accent-foreground: 220 26% 14%;     /* Dark on accent */
+    --border: 220 20% 20%;                /* Dark borders */
+    --input: 220 20% 20%;                 /* Dark input borders */
+    --ring: 45 93% 58%;                   /* Gold focus rings */
     
     /* Dark glass morphism */
     --glass-bg: 0 0 0 / 0.2;
@@ -103,9 +106,11 @@
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
     
     /* Dark gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(214 100% 45%));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(35 91% 70%));
+    --gradient-primary: linear-gradient(135deg, hsl(220 26% 12%), hsl(220 26% 8%));
+    --gradient-accent: linear-gradient(135deg, hsl(45 93% 47%), hsl(45 93% 58%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 26% 8% / 0.95), hsl(220 26% 12% / 0.8));
     --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    --gradient-card: linear-gradient(145deg, hsl(220 26% 12%), hsl(220 26% 10%));
   }
 }
 
@@ -154,26 +159,38 @@
     box-shadow: 0 10px 25px -5px hsl(var(--foreground) / 0.1);
   }
   
-  /* Bento Card System */
-  .bento-card {
-    @apply glass rounded-2xl p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl;
-    background: var(--gradient-glass);
+  /* Modern Card System */
+  .modern-card {
+    @apply rounded-2xl p-8 transition-all duration-300 hover:scale-[1.02] border;
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 4px 20px -4px hsl(var(--foreground) / 0.1);
   }
   
-  .bento-card-lg {
-    @apply bento-card col-span-2;
+  .modern-card:hover {
+    box-shadow: 0 8px 30px -4px hsl(var(--foreground) / 0.15);
+    border-color: hsl(var(--accent) / 0.3);
   }
   
-  .bento-card-tall {
-    @apply bento-card row-span-2;
+  .feature-card {
+    @apply modern-card text-center;
   }
   
-  /* Hero CTA Styles */
+  .service-card {
+    @apply modern-card hover:border-accent/30;
+  }
+  
+  .team-card {
+    @apply modern-card overflow-hidden;
+  }
+  
+  /* Modern CTA Button Styles */
   .hero-cta {
-    @apply glass px-8 py-4 rounded-full font-semibold transition-all duration-300;
+    @apply px-8 py-4 rounded-xl font-semibold transition-all duration-300 border-2;
     background: var(--gradient-accent);
     color: hsl(var(--accent-foreground));
-    box-shadow: 0 8px 25px -8px hsl(var(--accent) / 0.5);
+    border: 2px solid hsl(var(--accent));
+    box-shadow: 0 8px 25px -8px hsl(var(--accent) / 0.4);
     z-index: 30;
     position: relative;
     cursor: pointer;
@@ -181,8 +198,23 @@
   
   .hero-cta:hover {
     cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px -8px hsl(var(--accent) / 0.6);
+    border-color: hsl(var(--accent-light));
+  }
+  
+  .cta-secondary {
+    @apply px-8 py-4 rounded-xl font-semibold transition-all duration-300 border-2;
+    background: transparent;
+    color: hsl(var(--foreground));
+    border: 2px solid hsl(var(--border));
+    backdrop-filter: blur(20px);
+  }
+  
+  .cta-secondary:hover {
+    background: hsl(var(--accent) / 0.1);
+    border-color: hsl(var(--accent));
     transform: translateY(-2px);
-    box-shadow: 0 12px 30px -8px hsl(var(--accent) / 0.6);
   }
   
   /* Decorative Elements */

@@ -38,8 +38,8 @@ const AboutSection = () => {
     <section id="about" className="py-24 relative overflow-hidden bg-animated">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="bubble bubble-animate parallax-slow w-56 h-56 top-16 -right-10 opacity-3" style={{ animationDelay: '-15s' }}></div>
-        <div className="bubble bubble-pulse parallax-medium w-40 h-40 bottom-32 left-10 opacity-5" style={{ animationDelay: '-8s' }}></div>
+        <div className="bubble bubble-animate parallax-slow w-56 h-56 top-16 -right-10 opacity-30" style={{ animationDelay: '-15s' }}></div>
+        <div className="bubble bubble-pulse parallax-medium w-40 h-40 bottom-32 left-10 opacity-50" style={{ animationDelay: '-8s' }}></div>
         <div className="floating-orb w-64 h-64 top-1/4 left-3/4 opacity-20" style={{ animationDelay: '-25s' }}></div>
         <div className="geometric-shape top-16 left-1/4 w-8 h-2 bg-primary/10 parallax-fast" style={{ animationDelay: '-5s' }}></div>
         <div className="geometric-shape bottom-20 right-1/3 w-3 h-3 bg-accent/15 rounded-full parallax-medium" style={{ animationDelay: '-18s' }}></div>
@@ -61,13 +61,13 @@ const AboutSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             {/* Left: Image/Visual */}
             <div ref={imageRef} className="relative">
-              <div className="glass rounded-3xl p-8 hover-lift">
+              <div className="modern-card hover:scale-[1.02]">
                 <img 
                   src={blockchainImage}
                   alt="Blockchain technology visualization for cryptocurrency mining"
-                  className="w-full aspect-square object-cover rounded-2xl"
+                  className="w-full aspect-square object-cover rounded-2xl mb-6"
                 />
-                <div className="mt-6 text-center">
+                <div className="text-center">
                   <h3 className="text-xl font-semibold mb-2">Mozambique Operations</h3>
                   <p className="text-muted-foreground">Strategic locations across key regions</p>
                 </div>
@@ -91,7 +91,7 @@ const AboutSection = () => {
           </div>
 
           {/* Company Stats */}
-          <div ref={statsRef} className="glass rounded-3xl p-8">
+          <div ref={statsRef} className="modern-card">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
                 <div className="text-2xl md:text-3xl font-bold text-accent mb-2">15+</div>

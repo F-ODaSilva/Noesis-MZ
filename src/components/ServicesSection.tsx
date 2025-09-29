@@ -38,8 +38,8 @@ const ServicesSection = () => {
     <section id="services" className="py-24 relative overflow-hidden bg-animated">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="bubble bubble-animate parallax-slow w-72 h-72 top-20 -left-16 opacity-3" style={{ animationDelay: '-12s' }}></div>
-        <div className="bubble bubble-pulse parallax-medium w-48 h-48 bottom-16 right-8 opacity-4" style={{ animationDelay: '-6s' }}></div>
+        <div className="bubble bubble-animate parallax-slow w-72 h-72 top-20 -left-16 opacity-30" style={{ animationDelay: '-12s' }}></div>
+        <div className="bubble bubble-pulse parallax-medium w-48 h-48 bottom-16 right-8 opacity-40" style={{ animationDelay: '-6s' }}></div>
         <div className="floating-orb w-80 h-80 top-1/3 right-3/4 opacity-15" style={{ animationDelay: '-18s' }}></div>
         <div className="mesh-gradient w-96 h-96 top-16 right-16 opacity-20" style={{ animationDelay: '-30s' }}></div>
         <div className="geometric-shape top-24 left-1/3 w-5 h-5 bg-primary/10 rotate-12 parallax-fast" style={{ animationDelay: '-4s' }}></div>
@@ -58,14 +58,12 @@ const ServicesSection = () => {
             </p>
           </div>
 
-          {/* Bento Grid Services */}
-          <div ref={servicesRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Services Grid */}
+          <div ref={servicesRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`reveal-stagger bento-card group cursor-pointer ${
-                  index === 0 ? 'md:col-span-2 lg:col-span-1' : ''
-                } ${index === 1 ? 'lg:row-span-1' : ''}`}
+                className="reveal-stagger service-card group cursor-pointer"
               >
                 {/* Service Icon */}
                 <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -101,7 +99,7 @@ const ServicesSection = () => {
 
           {/* Additional Service Info */}
           <div ref={additionalRef} className="mt-16 grid md:grid-cols-3 gap-8">
-            <div className="glass rounded-2xl p-8">
+            <div className="modern-card">
               <div className="flex items-center mb-4">
                 <div className="w-3 h-3 bg-accent rounded-full mr-3"></div>
                 <h4 className="text-lg font-semibold">Enterprise Solutions</h4>
@@ -111,7 +109,7 @@ const ServicesSection = () => {
               </p>
             </div>
             
-            <div className="glass rounded-2xl p-8">
+            <div className="modern-card">
               <div className="flex items-center mb-4">
                 <div className="w-3 h-3 bg-primary rounded-full mr-3"></div>
                 <h4 className="text-lg font-semibold">Partnership Programs</h4>
@@ -121,7 +119,7 @@ const ServicesSection = () => {
               </p>
             </div>
 
-            <div className="glass rounded-2xl p-8">
+            <div className="modern-card">
               <img 
                 src={renewableEnergyImage}
                 alt="Renewable energy infrastructure supporting sustainable crypto mining in Mozambique"
